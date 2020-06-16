@@ -11,17 +11,16 @@ app.use(logger("dev"));
 app.use(express.static(join(__dirname, "static")));
 app.get("/", (req, res) => res.render("home"));
 
-const handleListening = () => 
+const handleListening = () =>
   console.log(`Server running: http://localhost:${PORT}`);
 
 const server = app.listen(PORT, handleListening);
 
 const io = socketIO.listen(server);
 
-let sockets = [];
-
-io.on("connection", (socket) => {
-  sockets.push(socket.id)
+io.on("connection", socket => {
+  // socket.broadcast.emit("hello");
+  socket.on("helloGuys", () => console.log("the client said hello"));
 });
 
 // setInterval(() => console.log(sockets), 1000);
