@@ -7,7 +7,7 @@ export const getSocket = () => socket;
 export const updateSocket = aSocket => (socket = aSocket);
 
 export const initSockets = aSocket => {
-  const { events } = window;
   updateSocket(aSocket);
+  const { events } = window;
   aSocket.on(events.newUser, handleNewUser);
 };
