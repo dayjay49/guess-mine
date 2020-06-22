@@ -1,6 +1,6 @@
 import events from "./events";
 
-const socketController = socket => {
+const socketController = (socket) => {
   const broadcast = (event, data) => {
     socket.broadcast.emit(event, data);
   };
@@ -24,6 +24,10 @@ const socketController = socket => {
 
   socket.on(events.strokePath, ({ x, y, color }) => {
     broadcast(events.strokedPath, { x, y, color });
+  });
+
+  socket.on(events.fill, ({ color }) => {
+    broadcast(events.filled, { color });
   });
 };
 
