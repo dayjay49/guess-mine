@@ -5,7 +5,7 @@ import {
   showControls,
   resetCanvas,
 } from "./paint";
-import { disableChat } from "./chat";
+import { enableChat, disableChat } from "./chat";
 
 const board = document.getElementById("jsPBoard");
 const notifs = document.getElementById("jsNotifs");
@@ -31,6 +31,7 @@ export const handleGameStarted = () => {
   disableCanvas();
   // hide canvas controls
   hideControls();
+  enableChat();
 };
 export const handlePainterNotif = ({ word }) => {
   enableCanvas();
