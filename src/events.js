@@ -12,6 +12,9 @@ const events = {
   fill: "fill",
   filled: "filled",
   playerUpdate: "playerUpdate",
+  gameStarted: "gameStarted",
+  painterNotif: "painterNotif",
+  gameEnded: "gameEnded",
 };
 
 export default events;
