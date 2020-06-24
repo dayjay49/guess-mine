@@ -33,6 +33,7 @@
     "copyAll": "cp -R src/static build && cp -R src/views build",
     "build": "yarn build:server && yarn build:assets && yarn copyAll",
     "prebuild": "rm -rf build",
+    "postinstall": "yarn build",
     "start": "node build/server.js"
   },
   "devDependencies": {
