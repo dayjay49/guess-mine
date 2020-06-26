@@ -1,5 +1,6 @@
 import dotenv from "dotenv";
 dotenv.config();
+import "./db";
 import { join } from "path";
 import express from "express";
 import socketIO from "socket.io";
