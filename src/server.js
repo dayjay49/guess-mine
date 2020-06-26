@@ -1,5 +1,6 @@
 import dotenv from "dotenv";
 dotenv.config();
+import "./db";
 import { join } from "path";
 import express from "express";
 import socketIO from "socket.io";
@@ -25,3 +26,5 @@ const server = app.listen(PORT, handleListening);
 const io = socketIO.listen(server);
 
 io.on("connection", (socket) => socketController(socket, io));
+
+// dev version!
