@@ -29,7 +29,7 @@ const socketController = (socket, io) => {
         setTimeout(() => {
           superBroadcast(events.gameStarted);
           io.to(painter.id).emit(events.painterNotif, { word });
-          timeout = setTimeout(endGame, 30000);
+          timeout = setTimeout(endGame, 31000);
         }, 5000);
       }
     }
